@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dream Sport Manouba | Salle de sport à Manouba Tunis</title>
+  <meta name="description"
+    content="Dream Sport Manouba, salle de sport à Manouba Tunis. Fitness, musculation, boxe, taekwondo, karaté, coaching et activités sportives." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: "#fef2f2", 100: "#fee2e2", 200: "#fecaca", 300: "#fca5a5",
+              400: "#f87171", 500: "#ef4444", 600: "#dc2626", 700: "#b91c1c",
+              800: "#991b1b", 900: "#7f1d1d",
+            },
+            dark: { 900: "#0a0a0a", 800: "#1a1a1a" },
+          },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+            arabic: ["Cairo", "Noto Sans Arabic", "sans-serif"],
+          },
+          backgroundImage: {
+            "hero-gradient": "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7))",
+          },
+          keyframes: {
+            fadeIn: { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
+            slideUp: { "0%": { transform: "translateY(20px)", opacity: "0" }, "100%": { transform: "translateY(0)", opacity: "1" } },
+          },
+          animation: { "fade-in": "fadeIn 0.5s ease-in-out", "slide-up": "slideUp 0.5s ease-out", "pulse-slow": "pulse 3s cubic-bezier(0.4,0,0.6,1) infinite" },
+        },
+      },
+    };
+  </script>
+  <style>
+    [dir="rtl"] { direction: rtl; text-align: right; }
+    [dir="ltr"] { direction: ltr; text-align: left; }
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #b91c1c; }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 antialiased">
+  <!-- Header -->
+  <header class="bg-dark-900/95 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="#home" class="flex items-center space-x-2 rtl:space-x-reverse">
+          <i data-lucide="dumbbell" class="h-8 w-8 text-primary-600"></i>
+          <span class="text-xl md:text-2xl font-bold text-white tracking-tight" data-i18n="logo">DREAM SPORT</span>
+        </a>
+        <nav class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+          <a href="#home" class="text-sm font-medium text-primary-600" data-i18n="nav.home">Accueil</a>
+          <a href="#about" class="text-sm font-medium text-gray-300 hover:text-primary-600 transition-colors" data-i18n="nav.about">À propos</a>
+          <a href="#activities" class="text-sm font-medium text-gray-300 hover:text-primary-600 transition-colors" data-i18n="nav.activities">Activités</a>
+          <a href="#planning" class="text-sm font-medium text-gray-300 hover:text-primary-600 transition-colors" data-i18n="nav.planning">Planning</a>
+          <a href="#coaches" class="text-sm font-medium text-gray-300 hover:text-primary-600 transition-colors" data-i18n="nav.coaches">Coachs</a>
+          <a href="#subscriptions" class="text-sm font-medium text-gray-300 hover:text-primary-600 transition-colors" data-i18n="nav.subscriptions">Abonnements</a>
+          <a href="#gallery" class="text-sm font-medium text-gray-300 hover:text-primary-600 transition-colors" data-i18n="nav.gallery">Galerie</a>
+          <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-primary-600 transition-colors" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4 rtl:space-x-reverse">
+          <div class="flex items-center space-x-1 rtl:space-x-reverse bg-gray-800 rounded-lg p-1">
+            <button id="btnFr" class="px-2 py-1 text-xs md:text-sm font-medium rounded-md bg-primary-600 text-white transition-colors">FR</button>
+            <button id="btnAr" class="px-2 py-1 text-xs md:text-sm font-medium rounded-md text-gray-300 hover:text-white transition-colors" dir="rtl">العربية</button>
+          </div>
+          <a href="#registration" class="hidden sm:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors shadow-lg shadow-primary-600/20">
+            <span data-i18n="btn.register">S'inscrire</span>
+          </a>
+          <button id="mobileMenuBtn" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+            <i data-lucide="menu" class="h-6 w-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobileMenu" class="lg:hidden bg-dark-900 border-t border-gray-800 hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-primary-600 bg-gray-800" data-i18n="nav.home">Accueil</a>
+        <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800" data-i18n="nav.about">À propos</a>
+        <a href="#activities" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800" data-i18n="nav.activities">Activités</a>
+        <a href="#planning" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800" data-i18n="nav.planning">Planning</a>
+        <a href="#coaches" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800" data-i18n="nav.coaches">Coachs</a>
+        <a href="#subscriptions" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800" data-i18n="nav.subscriptions">Abonnements</a>
+        <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800" data-i18n="nav.gallery">Galerie</a>
+        <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800" data-i18n="nav.contact">Contact</a>
+        <a href="#registration" class="block w-full mt-4 px-3 py-2 rounded-md text-base font-medium text-white bg-primary-600 hover:bg-primary-700 text-center" data-i18n="btn.register">S'inscrire</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-dark-900">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1975&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat">
+        <div class="absolute inset-0 bg-hero-gradient"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="animate-fade-in">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight" data-i18n="hero.title">DREAM SPORT MANOUBA</h1>
+          <div class="space-y-2 mb-8">
+            <p class="text-xl sm:text-2xl md:text-3xl text-gray-200 font-light" data-i18n="hero.tag1">Dépassez vos limites.</p>
+            <p class="text-xl sm:text-2xl md:text-3xl text-gray-200 font-light" data-i18n="hero.tag2">Construisez votre force.</p>
+            <p class="text-xl sm:text-2xl md:text-3xl text-primary-500 font-semibold" data-i18n="hero.tag3">Atteignez vos objectifs.</p>
+          </div>
+          <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto" data-i18n="hero.subtitle">Fitness • Musculation • Arts martiaux • Boxe • Coaching</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#activities" class="group inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 border border-transparent text-base sm:text-lg font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/30 hover:scale-105">
+              <span data-i18n="btn.discoverActivities">Découvrir nos activités</span>
+              <i data-lucide="arrow-right" class="ml-2 rtl:mr-2 rtl:ml-0 h-5 w-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"></i>
+            </a>
+            <a href="#planning" class="group inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 border border-white/30 text-base sm:text-lg font-medium rounded-md text-white bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all">
+              <i data-lucide="calendar" class="mr-2 rtl:mr-0 rtl:ml-2 h-5 w-5"></i>
+              <span data-i18n="btn.seePlanning">Voir le planning</span>
+            </a>
+            <a href="#registration" class="group inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 border border-primary-600 text-base sm:text-lg font-medium rounded-md text-primary-600 bg-transparent hover:bg-primary-600 hover:text-white transition-all">
+              <span data-i18n="btn.register">S'inscrire</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="animate-slide-up">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6" data-i18n="about.title">Bienvenue chez Dream Sport</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8" data-i18n="about.desc">Dream Sport Manouba est un espace dédié au sport, à la performance et au bien-être.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div class="flex items-start space-x-3 rtl:space-x-reverse"><div class="p-2 bg-primary-100 rounded-lg"><i data-lucide="target" class="h-6 w-6 text-primary-600"></i></div><div><h3 class="font-semibold text-gray-900 mb-1" data-i18n="about.goals">Objectifs</h3><p class="text-sm text-gray-600" data-i18n="about.goalsSub">Des objectifs personnalisés</p></div></div>
+              <div class="flex items-start space-x-3 rtl:space-x-reverse"><div class="p-2 bg-primary-100 rounded-lg"><i data-lucide="trophy" class="h-6 w-6 text-primary-600"></i></div><div><h3 class="font-semibold text-gray-900 mb-1" data-i18n="about.philo">Philosophie</h3><p class="text-sm text-gray-600" data-i18n="about.philoSub">Performance et dépassement</p></div></div>
+              <div class="flex items-start space-x-3 rtl:space-x-reverse"><div class="p-2 bg-primary-100 rounded-lg"><i data-lucide="users" class="h-6 w-6 text-primary-600"></i></div><div><h3 class="font-semibold text-gray-900 mb-1" data-i18n="about.support">Accompagnement</h3><p class="text-sm text-gray-600" data-i18n="about.supportSub">Professionnel et bienveillant</p></div></div>
+              <div class="flex items-start space-x-3 rtl:space-x-reverse"><div class="p-2 bg-primary-100 rounded-lg"><i data-lucide="heart" class="h-6 w-6 text-primary-600"></i></div><div><h3 class="font-semibold text-gray-900 mb-1" data-i18n="about.atmo">Ambiance</h3><p class="text-sm text-gray-600" data-i18n="about.atmoSub">Motivante et familiale</p></div></div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?q=80&w=2082&auto=format&fit=crop" alt="Gym" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-12 bg-dark-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center"><h3 class="text-3xl sm:text-4xl font-bold text-white mb-2">+500</h3><p class="text-gray-400" data-i18n="stats.members">Membres</p></div>
+          <div class="text-center"><h3 class="text-3xl sm:text-4xl font-bold text-white mb-2">+10</h3><p class="text-gray-400" data-i18n="stats.disc">Disciplines</p></div>
+          <div class="text-center"><h3 class="text-3xl sm:text-4xl font-bold text-white mb-2">+15</h3><p class="text-gray-400" data-i18n="stats.coaches">Coachs</p></div>
+          <div class="text-center"><h3 class="text-3xl sm:text-4xl font-bold text-white mb-2">+5</h3><p class="text-gray-400" data-i18n="stats.exp">Années</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities -->
+    <section id="activities" class="py-16 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-i18n="activities.title">Nos Activités</h2>
+          <p class="text-lg text-gray-600" data-i18n="activities.subtitle">Découvrez nos disciplines</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="activitiesGrid"></div>
+      </div>
+    </section>
+
+    <!-- Planning -->
+    <section id="planning" class="py-16 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="planningCategories">
+          <div class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-i18n="planning.title">Planning des cours</h1>
+            <p class="text-lg text-gray-600" data-i18n="planning.subtitle">Choisissez une activité</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="catGrid"></div>
+        </div>
+        <div id="planningSchedules" class="hidden">
+          <div class="mb-8">
+            <button id="btnBackCats" class="inline-flex items-center text-primary-600 mb-6">
+              <i data-lucide="arrow-left" class="h-5 w-5 mr-2 rtl:mr-0 rtl:ml-2"></i>
+              <span data-i18n="btn.backActivities">Retour aux activités</span>
+            </button>
+            <h1 id="schedTitle" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2"></h1>
+          </div>
+          <div id="schedTableWrap" class="bg-white rounded-xl shadow-sm border overflow-hidden hidden">
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-left rtl:text-right text-xs font-medium text-gray-500 uppercase" data-i18n="tbl.day">Jour</th>
+                    <th class="px-6 py-3 text-left rtl:text-right text-xs font-medium text-gray-500 uppercase" data-i18n="tbl.schedule">Horaire</th>
+                    <th class="px-6 py-3 text-left rtl:text-right text-xs font-medium text-gray-500 uppercase" data-i18n="tbl.coach">Coach</th>
+                    <th class="px-6 py-3 text-left rtl:text-right text-xs font-medium text-gray-500 uppercase" data-i18n="tbl.level">Niveau</th>
+                    <th class="px-6 py-3 text-left rtl:text-right text-xs font-medium text-gray-500 uppercase" data-i18n="tbl.room">Salle</th>
+                    <th class="px-6 py-3 text-left rtl:text-right text-xs font-medium text-gray-500 uppercase" data-i18n="tbl.cap">Places</th>
+                  </tr>
+                </thead>
+                <tbody id="schedBody" class="bg-white divide-y divide-gray-200"></tbody>
+              </table>
+            </div>
+          </div>
+          <div id="schedEmpty" class="text-center py-12 bg-white rounded-xl border hidden">
+            <p class="text-gray-600" data-i18n="planning.empty">Aucun cours</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coaches -->
+    <section id="coaches" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-i18n="coaches.title">Nos Coachs</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="coachesGrid"></div>
+      </div>
+    </section>
+
+    <!-- Subscriptions -->
+    <section id="subscriptions" class="py-16 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-i18n="subs.title">Abonnements</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto" id="subsGrid"></div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-i18n="gallery.title">Galerie</h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-2 mb-8" id="galFilters"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="galGrid"></div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-i18n="reviews.title">Avis</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="reviewsGrid"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="registration" class="py-16 lg:py-20 bg-primary-600">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-i18n="cta.title">Transformation</h2>
+        <a href="#registration" class="inline-flex items-center px-8 py-4 bg-white text-primary-600 rounded-md text-lg font-medium shadow-lg">
+          <span data-i18n="btn.register">S'inscrire</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-dark-900 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center">
+        <p class="text-gray-400 text-sm" data-i18n="footer.copy">© 2026 Dream Sport Manouba. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/21600000000" target="_blank" rel="noopener" class="fixed bottom-6 right-6 rtl:left-6 rtl:right-auto z-50 bg-green-500 text-white p-4 rounded-full shadow-lg">
+    <i data-lucide="message-circle" class="h-6 w-6"></i>
+  </a>
+
+  <script>
+    const I18N = {
+      fr: {
+        logo:"DREAM SPORT", nav:{home:"Accueil",about:"À propos",activities:"Activités",planning:"Planning",coaches:"Coachs",subscriptions:"Abonnements",gallery:"Galerie",contact:"Contact"},
+        btn:{register:"S'inscrire",discoverActivities:"Découvrir nos activités",seePlanning:"Voir le planning",backActivities:"← Retour aux activités"},
+        hero:{title:"DREAM SPORT MANOUBA",tag1:"Dépassez vos limites.",tag2:"Construisez votre force.",tag3:"Atteignez vos objectifs.",subtitle:"Fitness • Musculation • Arts martiaux • Boxe • Coaching"},
+        about:{title:"Bienvenue chez Dream Sport",desc:"Dream Sport Manouba est un espace dédié au sport, à la performance et au bien-être.",goals:"Objectifs",goalsSub:"Personnalisés",philo:"Philosophie",philoSub:"Performance",support:"Accompagnement",supportSub:"Bienveillant",atmo:"Ambiance",atmoSub:"Familiale"},
+        stats:{members:"Membres",disc:"Disciplines",coaches:"Coachs",exp:"Années d'expérience"},
+        activities:{title:"Nos Activités",subtitle:"Disciplines pour tous les niveaux",taekwondo:"Taekwondo",karate:"Karaté",boxing:"Boxe",kickboxing:"Kickboxing",bodybuilding:"Musculation",fitness:"Fitness",pilates:"Pilates",trx:"TRX",running:"Running",hyrox:"HYROX",cross:"Cross Training",personal:"Personal Training"},
+        planning:{title:"Planning des cours",subtitle:"Choisissez une activité",empty:"Aucun cours disponible"},
+        tbl:{day:"Jour",schedule:"Horaire",coach:"Coach",level:"Niveau",room:"Salle",cap:"Places"},
+        days:{monday:"Lundi",tuesday:"Mardi",wednesday:"Mercredi",thursday:"Jeudi",friday:"Vendredi",saturday:"Samedi",sunday:"Dimanche"},
+        levels:{beginner:"Débutant",intermediate:"Intermédiaire",advanced:"Avancé",allLevels:"Tous niveaux"},
+        coaches:{title:"Nos Coachs"},
+        subs:{title:"Abonnements",basic:"Basic",premium:"Premium",vip:"VIP",popular:"Populaire"},
+        gallery:{title:"Galerie",all:"Tous",gym:"Salle",equipment:"Équipements",classes:"Cours",coaches:"Coachs",events:"Événements"},
+        reviews:{title:"Avis des membres"},
+        cta:{title:"Prêt à commencer votre transformation ?"},
+        footer:{copy:"© 2026 Dream Sport Manouba. Tous droits réservés."}
+      },
+      ar:{
+        logo:"دريم سبورت", nav:{home:"الرئيسية",about:"من نحن",activities:"الأنشطة",planning:"البرنامج",coaches:"المدربون",subscriptions:"الاشتراكات",gallery:"المعرض",contact:"اتصل بنا"},
+        btn:{register:"سجّل الآن",discoverActivities:"اكتشف أنشطتنا",seePlanning:"شاهد البرنامج",backActivities:"← العودة إلى الأنشطة"},
+        hero:{title:"دريم سبور منوبة",tag1:"تحدّى نفسك",tag2:"طوّر قوتك",tag3:"وحقق أهدافك",subtitle:"لياقة بدنية • كمال أجسام • فنون قتالية • ملاكمة • تدريب شخصي"},
+        activities:{title:"أنشطتنا",taekwondo:"التايكوندو",karate:"الكاراتيه",boxing:"الملاكمة",kickboxing:"الكيك بوكسينغ",bodybuilding:"كمال الأجسام",fitness:"اللياقة",pilates:"البيلاتيس",trx:"TRX",running:"الجري",hyrox:"HYROX",cross:"تدريب متقاطع",personal:"تدريب شخصي"},
+        planning:{title:"برنامج الدروس",subtitle:"اختر نشاطاً",empty:"لا توجد دروس"},
+        tbl:{day:"اليوم",schedule:"الوقت",coach:"المدرب",level:"المستوى",room:"القاعة",cap:"أماكن"},
+        days:{monday:"الاثنين",tuesday:"الثلاثاء",wednesday:"الأربعاء",thursday:"الخميس",friday:"الجمعة",saturday:"السبت",sunday:"الأحد"},
+        levels:{beginner:"مبتدئ",intermediate:"متوسط",advanced:"متقدم",allLevels:"جميع المستويات"},
+        coaches:{title:"مدربونا"}, subs:{title:"اشتراكاتنا",basic:"أساسي",premium:"ممتاز",vip:"في آي بي",popular:"الأكثر شعبية"},
+        gallery:{title:"المعرض",all:"الكل",gym:"القاعة",equipment:"المعدات",classes:"الدروس",coaches:"المدربون",events:"الفعاليات"},
+        reviews:{title:"التقييمات"}, cta:{title:"جاهز للبدء؟"}, footer:{copy:"© ٢٠٢٦ دريم سبورت منوبة. جميع الحقوق محفوظة."}
+      }
+    };
+    let currentLang='fr';
+    function setLang(l){currentLang=l;document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.body.className=(l==='ar'?'font-arabic':'font-sans')+' bg-white text-gray-900 antialiased';document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n').split('.');let v=I18N[l];k.forEach(x=>v=v?.[x]);if(v!==undefined)el.textContent=v;});document.getElementById('btnFr').className='px-2 py-1 text-xs md:text-sm font-medium rounded-md '+(l==='fr'?'bg-primary-600 text-white':'text-gray-300');document.getElementById('btnAr').className='px-2 py-1 text-xs md:text-sm font-medium rounded-md '+(l==='ar'?'bg-primary-600 text-white':'text-gray-300');renderAll();lucide.createIcons();}
+    document.getElementById('btnFr').onclick=()=>setLang('fr');document.getElementById('btnAr').onclick=()=>setLang('ar');
+    const acts=[{id:'taekwondo',img:'https://images.unsplash.com/photo-1605001011156-cbf0b0f67a51?q=80&w=1974&auto=format&fit=crop'},{id:'karate',img:'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069&auto=format&fit=crop'},{id:'boxing',img:'https://images.unsplash.com/photo-1632267534642-b1a6506f3c7e?q=80&w=2070&auto=format&fit=crop'},{id:'kickboxing',img:'https://images.unsplash.com/photo-1584466977773-e625c37cdd50?q=80&w=1974&auto=format&fit=crop'},{id:'bodybuilding',img:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop'},{id:'fitness',img:'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070&auto=format&fit=crop'},{id:'pilates',img:'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070&auto=format&fit=crop'},{id:'trx',img:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop'},{id:'running',img:'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=2070&auto=format&fit=crop'},{id:'hyrox',img:'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop'},{id:'cross',img:'https://images.unsplash.com/photo-1526401485004-46910ecc8e51?q=80&w=2070&auto=format&fit=crop'},{id:'personal',img:'https://images.unsplash.com/photo-1554344728-77cf90d9ed26?q=80&w=2070&auto=format&fit=crop'}];
+    const cats=[{id:'taekwondo',icon:'🥋'},{id:'karate',icon:'🥋'},{id:'boxing',icon:'🥊'},{id:'kickboxing',icon:'🥊'},{id:'bodybuilding',icon:'🏋️'},{id:'fitness',icon:'🔥'},{id:'pilates',icon:'🧘'},{id:'trx',icon:'💪'},{id:'running',icon:'🏃'},{id:'hyrox',icon:'🔥'}];
+    const scheds={taekwondo:[{day:'monday',start:'17:00',end:'18:00',coach:'Ahmed',level:'beginner',room:'Salle 1',cap:20},{day:'wednesday',start:'17:00',end:'18:00',coach:'Ahmed',level:'intermediate',room:'Salle 1',cap:15},{day:'saturday',start:'10:00',end:'11:30',coach:'Ahmed',level:'allLevels',room:'Salle 1',cap:20}],boxing:[{day:'tuesday',start:'18:00',end:'19:00',coach:'Karim',level:'allLevels',room:'Salle 2',cap:12},{day:'thursday',start:'18:00',end:'19:00',coach:'Karim',level:'intermediate',room:'Salle 2',cap:12}],bodybuilding:[{day:'monday',start:'06:00',end:'22:00',coach:'Team',level:'allLevels',room:'Salle Muscu',cap:50}]};
+    function renderActivities(){const g=document.getElementById('activitiesGrid');g.innerHTML='';acts.forEach(a=>{const c=document.createElement('div');c.className='bg-white rounded-xl shadow-sm border overflow-hidden';c.innerHTML=`<div class="relative aspect-[16/10] overflow-hidden"><img src="${a.img}" class="w-full h-full object-cover"/></div><div class="p-6"><h3 class="text-lg font-bold text-gray-900 mb-2">${I18N[currentLang].activities[a.id]||a.id}</h3></div>`;g.appendChild(c);});}
+    function renderCats(){const g=document.getElementById('catGrid');g.innerHTML='';cats.forEach(c=>{const b=document.createElement('button');b.className='bg-white rounded-xl shadow-sm p-8 border flex flex-col items-center';b.innerHTML=`<span class="text-5xl mb-4">${c.icon}</span><h3 class="text-lg font-bold">${I18N[currentLang].activities[c.id]||c.id}</h3>`;b.onclick=()=>showSchedules(c.id);g.appendChild(b);});}
+    function showSchedules(id){document.getElementById('planningCategories').classList.add('hidden');document.getElementById('planningSchedules').classList.remove('hidden');const t=I18N[currentLang];document.getElementById('schedTitle').textContent=t.activities[id]||id;const list=scheds[id]||[];const wrap=document.getElementById('schedTableWrap'),empty=document.getElementById('schedEmpty'),body=document.getElementById('schedBody');body.innerHTML='';if(list.length===0){wrap.classList.add('hidden');empty.classList.remove('hidden');}else{wrap.classList.remove('hidden');empty.classList.add('hidden');list.forEach(s=>{const tr=document.createElement('tr');tr.innerHTML=`<td class="px-6 py-4 text-sm">${t.days[s.day]}</td><td class="px-6 py-4 text-sm">${s.start}-${s.end}</td><td class="px-6 py-4 text-sm">${s.coach}</td><td class="px-6 py-4 text-sm">${t.levels[s.level]}</td><td class="px-6 py-4 text-sm">${s.room}</td><td class="px-6 py-4 text-sm">${s.cap}</td>`;body.appendChild(tr);});}lucide.createIcons();}
+    document.getElementById('btnBackCats').onclick=()=>{document.getElementById('planningSchedules').classList.add('hidden');document.getElementById('planningCategories').classList.remove('hidden');};
+    function renderCoaches(){const g=document.getElementById('coachesGrid');g.innerHTML='';[{n:'Ahmed Ben Ali',sp:'Boxe',img:'https://images.unsplash.com/photo-1618842357528-0c3d227c9079?q=80&w=2070&auto=format&fit=crop'},{n:'Youssef Trabelsi',sp:'Taekwondo',img:'https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1974&auto=format&fit=crop'},{n:'Karim Mansouri',sp:'Musculation',img:'https://images.unsplash.com/photo-1579046758287-7b35f5791798?q=80&w=1974&auto=format&fit=crop'},{n:'Salma Bouzid',sp:'Fitness',img:'https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=1974&auto=format&fit=crop'}].forEach(c=>{const d=document.createElement('div');d.className='bg-white rounded-xl border overflow-hidden';d.innerHTML=`<div class="aspect-square overflow-hidden"><img src="${c.img}" class="w-full h-full object-cover"/></div><div class="p-6"><h3 class="font-bold">${c.n}</h3><p class="text-primary-600 text-sm">${c.sp}</p></div>`;g.appendChild(d);});}
+    function renderSubs(){const g=document.getElementById('subsGrid');g.innerHTML='';const t=I18N[currentLang];[{n:t.subs.basic,price:'150 TND',pop:false},{n:t.subs.premium,price:'250 TND',pop:true},{n:t.subs.vip,price:'400 TND',pop:false}].forEach(p=>{const d=document.createElement('div');d.className='bg-white rounded-2xl border p-8 '+(p.pop?'border-primary-500 ring-2 ring-primary-500/20':'');d.innerHTML=`<h3 class="text-2xl font-bold mb-2">${p.n}</h3><div class="text-4xl font-bold mb-6">${p.price}</div><a href="#registration" class="w-full inline-flex justify-center px-6 py-3 rounded-md ${p.pop?'bg-primary-600 text-white':'border border-primary-600 text-primary-600'}">${t.btn.register}</a>`;g.appendChild(d);});}
+    function renderGallery(){const t=I18N[currentLang];const catsGal=[{id:'all',l:t.gallery.all},{id:'gym',l:t.gallery.gym},{id:'equipment',l:t.gallery.equipment},{id:'classes',l:t.gallery.classes},{id:'coaches',l:t.gallery.coaches},{id:'events',l:t.gallery.events}];const imgs=[{c:'gym',src:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop'},{c:'equipment',src:'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop'},{c:'classes',src:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop'},{c:'coaches',src:'https://images.unsplash.com/photo-1618842357528-0c3d227c9079?q=80&w=2070&auto=format&fit=crop'},{c:'gym',src:'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2070&auto=format&fit=crop'},{c:'events',src:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop'}];let active='all';const f=document.getElementById('galFilters');f.innerHTML='';function draw(){const g=document.getElementById('galGrid');g.innerHTML='';imgs.filter(i=>active==='all'||i.c===active).forEach(i=>{const d=document.createElement('div');d.className='relative aspect-[4/3] rounded-xl overflow-hidden';d.innerHTML=`<img src="${i.src}" class="w-full h-full object-cover"/>`;g.appendChild(d);});}catsGal.forEach(c=>{const b=document.createElement('button');b.textContent=c.l;b.className='px-4 py-2 rounded-full text-sm '+(active===c.id?'bg-primary-600 text-white':'bg-gray-100');b.onclick=()=>{active=c.id;draw();};f.appendChild(b);});draw();}
+    function renderReviews(){const g=document.getElementById('reviewsGrid');g.innerHTML='';[{n:'Amine B.',c:'Excellente salle !'},{n:'Sarah M.',c:'J adore cette salle !'},{n:'Omar T.',c:'Super accueil !'}].forEach(r=>{const d=document.createElement('div');d.className='bg-gray-50 rounded-xl p-6';d.innerHTML=`<p class="mb-4 italic">"${r.c}"</p><p class="font-semibold">${r.n}</p>`;g.appendChild(d);});}
+    function renderAll(){renderActivities();renderCats();renderCoaches();renderSubs();renderGallery();renderReviews();}
+    document.getElementById('mobileMenuBtn').onclick=()=>document.getElementById('mobileMenu').classList.toggle('hidden');
+    setLang('fr'); lucide.createIcons();
+  </script>
+</body>
+</html>
