@@ -54,7 +54,7 @@ const ReviewsSection = () => {
                   />
                 ))}
               </div>
-              <p className="text-gray-600 mb-6 italic">"{review.comment}"</p>
+              <p className="text-gray-600 mb-6 italic">&quot;{review.comment}&quot;</p>
               <div className="flex items-center">
                 <div className="relative h-10 w-10 rounded-full overflow-hidden mr-3 rtl:mr-0 rtl:ml-3">
                   <Image

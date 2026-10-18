@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowLeft, Calendar, Clock, MapPin, Users } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 type ActivityCategory = {
   id: string;

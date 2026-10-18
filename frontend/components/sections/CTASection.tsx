@@ -15,7 +15,7 @@ const CTASection = () => {
           Prêt à commencer votre transformation ?
         </h2>
         <p className="text-lg text-primary-100 mb-8 max-w-3xl mx-auto">
-          Rejoignez Dream Sport Manouba aujourd'hui et atteignez vos objectifs avec nos coachs professionnels.
+          Rejoignez Dream Sport Manouba aujourd&apos;hui et atteignez vos objectifs avec nos coachs professionnels.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link

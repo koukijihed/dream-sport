@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Swords, Boxing, Dumbbell, Heart, Zap, Activity, PersonStanding } from "lucide-react";
+import { ArrowRight, Swords, Hand, Dumbbell, Heart, Zap, Activity, PersonStanding } from "lucide-react";
 
 const ActivitiesSection = () => {
   const t = useTranslations();
@@ -25,14 +25,14 @@ const ActivitiesSection = () => {
       slug: "karate",
     },
     {
-      icon: Boxing,
+      icon: Hand,
       name: t("activities.boxing"),
       description: "Cardio intense et technique de frappe.",
       image: "https://images.unsplash.com/photo-1632267534642-b1a6506f3c7e?q=80&w=2070&auto=format&fit=crop",
       slug: "boxing",
     },
     {
-      icon: Boxing,
+      icon: Hand,
       name: t("activities.kickboxing"),
       description: "Puissance, agilité et endurance.",
       image: "https://images.unsplash.com/photo-1584466977773-e625c37cdd50?q=80&w=1974&auto=format&fit=crop",

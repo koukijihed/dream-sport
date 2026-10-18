@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { locales, type Locale } from "@/i18n/config";
+import { locales } from "@/i18n/config";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
@@ -19,6 +19,8 @@ export default async function LocaleLayout({
 }) {
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
+
+  setRequestLocale(locale);
 
   const messages = await getMessages();
 

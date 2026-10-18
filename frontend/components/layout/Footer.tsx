@@ -8,7 +8,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  Clock,
   Facebook,
   Instagram,
   Youtube,
@@ -18,8 +17,6 @@ import {
 const Footer = () => {
   const t = useTranslations();
   const locale = useLocale();
-
-  const currentYear = new Date().getFullYear();
 
   const navLinks = [
     { href: "/", label: t("nav.home") },
